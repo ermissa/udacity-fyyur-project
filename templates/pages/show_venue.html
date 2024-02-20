@@ -110,19 +110,15 @@
 		var venueId = "{{ venue.id|safe }}";
 		var url = 'http://127.0.0.1:5000/venues/' + venueId;
 
-		// console.log(url);
-		// return;
-
 		fetch(url, {
 			method: 'DELETE',
 		})
-			// .then(response => response.json())
 			.then(data => {
 				Swal.fire({
 					title: "Venue successfully deleted!",
 					icon: "success"
 				});
-				window.location.href = '/venues'; // Redirect to /venues page	
+				window.location.href = '/venues';
 			})
 			.catch((error) => {
 				console.error('Error:', error);
@@ -133,7 +129,5 @@
 			});
 	});
 </script>
-
-<!-- <a href="/venues/{{ venue.id }}/delete"><button class="btn btn-danger btn-lg">Delete</button></a> -->
 
 {% endblock %}
